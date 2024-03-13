@@ -31,7 +31,7 @@ yesterday_closing_price=float(closing_price_list[0])
 day_before_yesterday_closing_price=float(closing_price_list[1])
 closing_price_percent_diff=abs(round(((yesterday_closing_price-day_before_yesterday_closing_price)/yesterday_closing_price)*100))
 
-if(closing_price_percent_diff<5):
+if(closing_price_percent_diff>5):
 
     news_data=requests.get(url=NEWS_ENDPOINT,params=news_params)
     news_data.raise_for_status()
